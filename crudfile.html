@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TODO creation using CRUD</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        color: green;
+        margin-left: 500px;
+      }
+
+      .crud-container {
+        display: grid;
+        grid-template-columns: repeat(2, 5fr);
+        gap: 20px;
+        max-width: 600px;
+        border-radius: 10px;
+      }
+
+      .box {
+        border: 2px solid #333;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: antiquewhite;
+      }
+
+      .box h3 {
+        margin-top: 0;
+      }
+
+      input {
+        width: 100%;
+        padding: 6px;
+        margin-top: 8px;
+      }
+
+      button {
+        margin-top: 10px;
+        padding: 6px 10px;
+      }
+      .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>TODO creation using CRUD</h1>
+    <div class="wrapper">
+      <div class="crud-container">
+        <!-- CREATE -->
+        <div class="box cbox">
+          <h3>Create Todo</h3>
+          <input type="text" placeholder="Enter new todo" />
+          <button>Create</button>
+        </div>
+
+        <!-- READ -->
+        <div class="box">
+          <h3>Read Todos</h3>
+          <p>Display all todos here</p>
+          <button>Read</button>
+        </div>
+
+        <!-- UPDATE -->
+        <div class="box">
+          <h3>Update Todo</h3>
+          <input type="text" placeholder="Update existing todo" />
+          <button>Update</button>
+        </div>
+
+        <!-- DELETE -->
+        <div class="box">
+          <h3>Delete Todo</h3>
+          <input type="text" placeholder="Todo to delete" />
+          <button>Delete</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
