@@ -122,8 +122,8 @@ function setLocalStorage(itemsArray) {
 }
 
 // Initialize items from local storage
-let items = getLocalStorage();
-let editId = null;
+items = getLocalStorage();
+editId = null;
 
 // ....
 
