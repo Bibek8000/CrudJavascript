@@ -105,3 +105,54 @@ export function setEditId(itemId) {
     }
   }, 0);
 }
+// Remove this line:
+// import { groceryItems } from './data.js';
+
+// Local Storage Functions
+function getLocalStorage() {
+  const list = localStorage.getItem("grocery-list");
+  if (list) {
+    return JSON.parse(list);
+  }
+  return [];
+}
+
+function setLocalStorage(itemsArray) {
+  localStorage.setItem("grocery-list", JSON.stringify(itemsArray));
+}
+
+// Initialize items from local storage
+let items = getLocalStorage();
+let editId = null;
+
+// ....
+
+// Add Item Function
+function addItem(itemName) {
+  // ....
+  setLocalStorage(items);
+  render();
+}
+
+// Edit Completed Function
+function editCompleted(itemId) {
+  // ....
+  setLocalStorage(items);
+  render();
+}
+
+// Remove Item Function
+function removeItem(itemId) {
+  items = items.filter((item) => item.id !== itemId);
+  setLocalStorage(items);
+  render();
+}
+
+// Update Item Name Function
+function updateItemName(newName) {
+  // ....
+  setLocalStorage(items);
+  render();
+}
+
+// ....
