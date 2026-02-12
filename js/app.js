@@ -14,3 +14,15 @@ function render() {
 
 // Initialize App
 render();
+// ....
+
+// Edit Completed Function
+export function editCompleted(itemId) {
+  items = items.map((item) => {
+    if (item.id === itemId) {
+      return { ...item, completed: !item.completed };
+    }
+    return item;
+  });
+  render();
+}
