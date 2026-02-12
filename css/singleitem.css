@@ -36,8 +36,3 @@
 .single-item .remove-btn:hover {
   background: #900e0e;
 }
-.items {
-  margin-top: 2rem;
-  display: grid;
-  row-gap: 1rem;
-}
