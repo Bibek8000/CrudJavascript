@@ -1,53 +1,18 @@
-import { addItem, updateItemName } from "./app.js"; // edited
+import { addItem, updateItemName } from "./app.js";
 
 // Create Form Element
-export function createForm() {
+export function createForm(editId = null, editItem = null) {
   const form = document.createElement("form");
 
+  // Form inner HTML
   form.innerHTML = `
     <h2>grocery bud</h2>
     <div class="form-control">
-      <input
-        type="text"
-        class="form-input"
-        placeholder="e.g. eggs"
-      />
-      <button type="submit" class="btn">
-        add item
-      </button>
-    </div>
-  `;
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const input = form.querySelector(".form-input");
-    const value = input.value.trim();
-
-    if (!value) {
-      alert("Please provide value");
-      return;
-    }
-
-    addItem(value);
-    input.value = "";
-  });
-
-  return form;
-}
-
-// Create Form Element
-export function createForm(editId, itemToEdit) {
-  const form = document.createElement("form");
-
-  // added value and dynamic button name
-  form.innerHTML = `
-    <h2>grocery bud</h2>
-    <div class="form-control">
-      <input
-        type="text"
-        class="form-input"
-        placeholder="e.g. eggs"
-        value="${itemToEdit ? itemToEdit.name : ""}"
+      <input 
+        type="text" 
+        class="form-input" 
+        placeholder="e.g. eggs" 
+        value="${editItem ? editItem.name : ""}" 
       />
       <button type="submit" class="btn">
         ${editId ? "edit item" : "add item"}
@@ -55,20 +20,19 @@ export function createForm(editId, itemToEdit) {
     </div>
   `;
 
+  const input = form.querySelector(".form-input");
+
+  // Handle form submission
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const input = form.querySelector(".form-input");
     const value = input.value.trim();
+    if (!value) return;
 
-    if (!value) {
-      alert("please provide value", "error");
-      return;
-    }
-
-    // added conditions
     if (editId) {
+      // Update existing item
       updateItemName(value);
     } else {
+      // Add new item
       addItem(value);
     }
 
