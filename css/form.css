@@ -7,7 +7,7 @@ form h2 {
 
 .form-control {
   display: grid;
-  grid-template-columns: 1fr 100px;
+  grid-template-columns: 1fr auto;
 }
 
 .form-input {

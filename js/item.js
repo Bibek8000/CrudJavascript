@@ -12,7 +12,6 @@ export function createItems(itemsArray) {
 
   return container;
 }
-import { createSingleItem } from "./single-item.js";
 
 // Create Items Container
 export function createItems(itemsArray) {

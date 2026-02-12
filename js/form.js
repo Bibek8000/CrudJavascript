@@ -1,4 +1,4 @@
-import { addItem } from "./app.js";
+import { addItem, updateItemName } from "./app.js"; // edited
 
 // Create Form Element
 export function createForm() {
@@ -34,7 +34,6 @@ export function createForm() {
 
   return form;
 }
-import { addItem, updateItemName } from "./app.js"; // edited
 
 // Create Form Element
 export function createForm(editId, itemToEdit) {
